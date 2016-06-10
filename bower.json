@@ -1,0 +1,22 @@
+{
+  "name": "my-project",
+  "description": "",
+  "main": "",
+  "keywords": [
+    "polymer",
+    "web-component"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.5.0",
+    "app-layout": "PolymerElements/app-layout#^0.9.1"
+  }
+}

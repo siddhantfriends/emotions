@@ -1,0 +1,3 @@
+# excluding bower components
+bower_components/
+components/
