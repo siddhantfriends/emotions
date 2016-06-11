@@ -1,6 +1,0 @@
-# excluding bower components
-bower_components/
-components/
-node_modules/
-test/
-tests/
