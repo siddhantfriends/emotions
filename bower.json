@@ -1,0 +1,24 @@
+{
+  "name": "emotions",
+  "homepage": "https://github.com/siddhantfriends/emotions",
+  "authors": [
+    "Siddhant Baviskar <siddhant.baviskar@northumbria.ac.uk>"
+  ],
+  "description": "This is a PhD project",
+  "main": "",
+  "keywords": [
+    "emotions"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.5.0",
+    "paper-card": "PolymerElements/paper-card#^1.1.1"
+  }
+}
