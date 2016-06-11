@@ -1,0 +1,327 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Project Survey</title>
+    <link rel="stylesheet" type="text/css" href="css/panasx.css">
+   
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.js"></script>
+    
+    <script>
+        function validateForm() {
+            if($('tr.question:not(:has(:radio:checked))').length){
+                alert('Please fill out all the required fields');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="page">
+        <div class="header">
+            <h1 align="center">Research Questionnaire</h1>
+        </div>
+        <p><strong>Read each item and then select the appropriate answer from the scale next to that word. Indicate to what extent you have felt this way while watching the video. Use the following scale to record your answers.</strong></p>
+       
+            <form method="post" action="php/pnxinsert.php" onsubmit="return validateForm();">
+            <p class="start"><strong>Please select the option closest to your feelings when you watched the video </strong></p>
+                
+            <div id="scrollTableContainer">
+                <div id="tHeadContainer">
+                    <table id="tableHead">
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td class="head">
+                                <strong>1</strong><br>
+                                very slightly or not at all
+                            </td>
+                            <td class="head">
+                                <strong>2</strong><br>
+                                 a little
+                            </td>
+                            <td class="head">
+                                <strong>3</strong><br>
+                                   moderately 
+                            </td>
+                            <td class="head">
+                                <strong>4</strong><br>
+                                quite a bit
+                            </td>
+                            <td class="head">
+                                <strong>5</strong><br>
+                                extremely
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="tBodyContainer">
+                    <table id="tBody">
+                        <tr class="question">
+                            <td class="questionColumn"><label>1. Cheerful </label></td>
+                            <td class="radio">
+                                <label><input type="radio" name="p1" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p1" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p1" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p1" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p1" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">2. Happy</td>
+                            <td class="radio">
+                                <label><input type="radio" name="p22" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p22" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p22" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p22" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p22" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">3. Joyful</td>
+                            <td class="radio">
+                                <label><input type="radio" name="p33" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p33" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p33" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p33" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p33" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">4. Delighted</td>
+                            <td class="radio">
+                                <label><input type="radio" name="p12" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p12" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p12" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p12" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p12" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">5. Enthusiastic</td>
+                            <td class="radio">
+                                <label><input type="radio" name="p47" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p47" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p47" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p47" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p47" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">6. Excited </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p37" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p37" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p37" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p37" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p37" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">7. Lively </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p41" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p41" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p41" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p41" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p41" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">8. Energetic </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p58" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p58" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p58" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p58" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p58" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">9. Afraid </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p18" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p18" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p18" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p18" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p18" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">10. Scared </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p44" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p44" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p44" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p44" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p44" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">11. Frightened </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p53" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p53" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p53" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p53" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p53" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">12. Nervous</td>
+                            <td class="radio">
+                                <label><input type="radio" name="p34" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p34" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p34" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p34" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p34" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">13. Jittery</td>
+                            <td class="radio">
+                                <label><input type="radio" name="p40" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p40" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p40" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p40" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p40" value="5"></label>
+                            </td>
+                        </tr>
+                        <tr class="question">
+                            <td class="questionColumn">14. Shaky </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p21" value="1" required></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p21" value="2"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p21" value="3"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p21" value="4"></label>
+                            </td>
+                            <td class="radio">
+                                <label><input type="radio" name="p21" value="5"></label>
+                            </td>
+                        </tr>
+                     </table>
+                </div>
+            </div>
+            <br>
+            <div id="sbmbutton"> 
+                <input type="submit" class="button" value="Next">
+            </div><br>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

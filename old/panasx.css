@@ -1,0 +1,150 @@
+html {
+    font-family: "Calibri Light", sans-serif;
+}
+
+body {
+    background-color: #e6e6e6;
+}
+
+#page {
+    width: 1100px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 2px;
+    padding: 1px 10px 10px 10px;
+}
+
+.header {
+    height: 80px;
+    margin: auto;
+    background-color: #008CBA;
+    border-radius: 4px;
+    color: white;
+}
+
+div h1 {
+    padding-top: 20px;
+}
+
+span {
+    font-weight: bold;
+}
+
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    empty-cells: show;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2
+}
+
+td.radio {
+    text-align: center;
+}
+
+td label {
+    display: block;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+th {
+    text-align: center;
+}
+
+#sbmbutton{ 
+    text-align: center;
+}
+
+.button{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+p {
+    font-size: 18px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+p.start {
+    font-size: 30px;
+}
+
+input[type='radio'] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+td:first-child {
+    min-width: 350px;
+    max-width: 350px;
+}
+
+td:first-child + td {
+    min-width: 122px;
+    max-width: 122px;
+}
+
+td:first-child + td + td {
+    min-width: 122px;
+    max-width: 122px;
+}
+
+td:first-child + td + td + td {
+    min-width: 122px;
+    max-width: 122px;
+}
+
+td:first-child + td + td + td + td {
+    min-width: 122px;
+    max-width: 122px;
+}
+
+td:first-child + td + td + td + td + td {
+    width: 122px;
+}
+
+.head {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* scrollable table */
+
+div#scrollTableContainer {
+    width: 1077px;
+    margin: auto;
+}
+
+#tHeadContainer {
+    font-weight: bold;
+}
+
+#tBodyContainer {
+    height: 550px;
+    overflow-y: scroll;
+}
