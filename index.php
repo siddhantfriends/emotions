@@ -42,8 +42,8 @@
                         <paper-input id="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90" maxlength="2" text-align="right">
                             <div suffix>years</div>
                         </paper-input>
-                        <br /><br />
-                        <iron-label for="nationality-dropdown">Nationality</iron-label>
+                        <br />
+                        <iron-label for="nationality-dropdown">Nationality</iron-label><br />
                         <paper-dropdown-menu id="nationality-dropdown" label="Nationality" no-label-float>
                             <paper-listbox class="dropdown-content">
                                 <paper-item>allosaurus</paper-item>
