@@ -45,13 +45,13 @@
                         </paper-input>
                         <br /><br />
                         <iron-label>Nationality</iron-label>
-                        <paper-dropdown-menu label="Your favourite pastry">
-                          <paper-listbox class="dropdown-content">
-                            <paper-item>Croissant</paper-item>
-                            <paper-item>Donut</paper-item>
-                            <paper-item>Financier</paper-item>
-                            <paper-item>Madeleine</paper-item>
-                          </paper-listbox>
+                        <paper-dropdown-menu label="Dinosaurs">
+                            <paper-listbox class="dropdown-content">
+                                <paper-item>allosaurus</paper-item>
+                                <paper-item>brontosaurus</paper-item>
+                                <paper-item>carcharodontosaurus</paper-item>
+                                <paper-item>diplodocus</paper-item>
+                            </paper-listbox>
                         </paper-dropdown-menu>
                     </div>
                     <div class="card-actions">
