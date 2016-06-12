@@ -16,3 +16,7 @@ paper-toolbar > div#topBar > span.title {
 paper-card#user-details-1 {
     margin-top: 20px;
 }
+
+div#center {
+    text-align: center;
+}
