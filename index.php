@@ -37,7 +37,7 @@
                         <br />
                         <br />
                         <iron-label>Age</iron-label>
-                        <paper-input label="Please enter your age." type="number" no-label-float>
+                        <paper-input label="Please enter your age." type="number" no-label-float min="18" max="90">
                             <div suffix> years</div>
                         </paper-input>
                     </div>
