@@ -16,16 +16,17 @@
         <link rel="stylesheet" type="text/css" href="style/main.css" />
     </head>
     <body>
-        <!-- Use elements -->
-        <paper-toolbar>
-            <span class="title">Research</span>
-        </paper-toolbar>
-        
-        <paper-card heading="Card Title">
-            <div class="card-content">Some content</div>
-            <div class="card-actions">
-                <paper-button>Some action</paper-button>
-            </div>
-        </paper-card>
+        <div id="content">
+            <paper-toolbar>
+                <span class="title">Research</span>
+            </paper-toolbar>
+
+            <paper-card heading="Form">
+                <div class="card-content">Kindly fill the form.</div>
+                <div class="card-actions">
+                    <paper-button>Some action</paper-button>
+                </div>
+            </paper-card>
+        </div>
     </body>
 </html>
