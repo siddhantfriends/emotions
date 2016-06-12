@@ -3,6 +3,6 @@ html, body {
     padding: 0;
 }
 paper-toolbar > div#topBar > span.title {
-    position: absolute;
-    left: 0px;
+    margin-left: 0px;
+    font-size: 24px;
 }
