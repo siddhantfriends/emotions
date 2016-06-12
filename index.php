@@ -43,8 +43,8 @@
                             <div suffix>years</div>
                         </paper-input>
                         <br /><br />
-                        <iron-label>Nationality</iron-label>
-                        <paper-dropdown-menu label="Dinosaurs">
+                        <iron-label for="nationality-dropdown">Nationality</iron-label>
+                        <paper-dropdown-menu id="nationality-dropdown" label="Nationality" no-label-float>
                             <paper-listbox class="dropdown-content">
                                 <paper-item>allosaurus</paper-item>
                                 <paper-item>brontosaurus</paper-item>
