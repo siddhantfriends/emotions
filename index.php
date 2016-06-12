@@ -10,6 +10,9 @@
         <link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
         <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+        
+        <!-- Importing css -->
+        <link rel="stylesheet" type="text/css" href="style/main.css" />
     </head>
     <body>
         <!-- Use elements -->
