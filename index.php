@@ -11,6 +11,9 @@
         <link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html" />
         <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html" />
         <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html" />
+        <link rel="import" href="bower_components/iron-label/iron-label.html" />
+        <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html" />
+        <link rel="import" href="bower_components/paper-radio-button/paper-radio-button.html" />
         
         <!-- Importing css -->
         <link rel="stylesheet" type="text/css" href="style/main.css" />
@@ -21,8 +24,16 @@
                 <span class="title">Research</span>
             </paper-toolbar>
 
-            <paper-card heading="Form">
-                <div class="card-content">Kindly fill the form.</div>
+            <paper-card id="user-details-1" heading="Please fill the details below:">
+                <div class="card-content">
+                    <iron-label>
+                        Gender
+                        <paper-radio-group>
+                            <paper-radio-button>Male</paper-radio-button>
+                            <paper-radio-button>Female</paper-radio-button>
+                        </paper-radio-group>
+                    </iron-label>
+                </div>
                 <div class="card-actions">
                     <paper-button>Some action</paper-button>
                 </div>
