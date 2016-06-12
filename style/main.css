@@ -28,3 +28,7 @@ div#center > * {
 hr.horizontal-rule {
     border-top: 1px solid #8c8b8b;
 }
+
+paper-input#age-input {
+    width: 50px;
+}

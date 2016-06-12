@@ -36,8 +36,8 @@
                         </paper-radio-group>
                         <br />
                         <br />
-                        <iron-label>Age</iron-label>
-                        <paper-input label="Please enter your age." type="number" no-label-float min="18" max="90">
+                        <iron-label for="age-input">Age</iron-label>
+                        <paper-input id="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90">
                             <div suffix> years</div>
                         </paper-input>
                     </div>
