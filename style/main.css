@@ -20,3 +20,7 @@ paper-card#user-details-1 {
 div#center {
     text-align: center;
 }
+
+hr.horizontal-rule {
+    border-top: 1px solid #8c8b8b;
+}

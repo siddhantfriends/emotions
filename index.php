@@ -14,6 +14,7 @@
         <link rel="import" href="bower_components/iron-label/iron-label.html" />
         <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html" />
         <link rel="import" href="bower_components/paper-radio-button/paper-radio-button.html" />
+        <link rel="import" href="bower_components/paper-input/paper-input.html" />
         
         <!-- Importing css -->
         <link rel="stylesheet" type="text/css" href="style/main.css" />
@@ -28,10 +29,14 @@
                 <paper-card id="user-details-1" heading="Please fill the details below:">
                     <div class="card-content">
                         <iron-label id="gender-label">Gender</iron-label>
+                        <br />
                         <paper-radio-group aria-labelledby="gender-label">
                             <paper-radio-button name="male">Male</paper-radio-button>
                             <paper-radio-button name="female">Female</paper-radio-button>
                         </paper-radio-group>
+                        <hr class="horizontal-rule" />
+                        <iron-label>Age</iron-label>
+                        
                     </div>
                     <div class="card-actions">
                         <paper-button>Submit</paper-button>
