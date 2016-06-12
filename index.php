@@ -17,7 +17,7 @@
     <body>
         <!-- Use elements -->
         <paper-toolbar>
-            <span class="title">Research Project</span>
+            Research Project
         </paper-toolbar>
     </body>
 </html>
