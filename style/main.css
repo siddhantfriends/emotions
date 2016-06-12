@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
-paper-toolbar > span.title {
+paper-toolbar > div#topBar > span.title {
     position: absolute;
     left: 0px;
 }
