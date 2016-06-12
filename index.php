@@ -15,6 +15,10 @@
         <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html" />
         <link rel="import" href="bower_components/paper-radio-button/paper-radio-button.html" />
         <link rel="import" href="bower_components/paper-input/paper-input.html" />
+        <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu-light.html" />
+        <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu-icons.html" />
+        <link rel="import" href="bower_components/paper-listbox/paper-listbox.html" />
+        <link rel="import" href="bower_components/paper-item/paper-item.html" />
         
         <!-- Importing css -->
         <link rel="stylesheet" type="text/css" href="style/main.css" />
@@ -34,12 +38,21 @@
                             <paper-radio-button name="male">Male</paper-radio-button>
                             <paper-radio-button name="female">Female</paper-radio-button>
                         </paper-radio-group>
-                        <br />
-                        <br />
+                        <br /><br />
                         <iron-label for="age-input">Age</iron-label>
-                        <paper-input id="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90">
-                            <div suffix> years</div>
+                        <paper-input id="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90" maxlength="2" text-align="right">
+                            <div suffix>years</div>
                         </paper-input>
+                        <br /><br />
+                        <iron-label>Nationality</iron-label>
+                        <paper-dropdown-menu label="Your favourite pastry">
+                          <paper-listbox class="dropdown-content">
+                            <paper-item>Croissant</paper-item>
+                            <paper-item>Donut</paper-item>
+                            <paper-item>Financier</paper-item>
+                            <paper-item>Madeleine</paper-item>
+                          </paper-listbox>
+                        </paper-dropdown-menu>
                     </div>
                     <div class="card-actions">
                         <paper-button>Submit</paper-button>

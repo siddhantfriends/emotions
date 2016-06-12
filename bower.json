@@ -28,6 +28,9 @@
     "iron-label": "PolymerElements/iron-label#^1.0.2",
     "paper-radio-button": "PolymerElements/paper-radio-button#^1.2.0",
     "paper-radio-group": "PolymerElements/paper-radio-group#^1.2.0",
-    "paper-input": "PolymerElements/paper-input#^1.1.11"
+    "paper-input": "PolymerElements/paper-input#^1.1.11",
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.2.1",
+    "paper-listbox": "polymerelements/paper-listbox#^1.1.2",
+    "paper-item": "PolymerElements/paper-item#^1.2.1"
   }
 }
