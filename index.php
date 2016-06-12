@@ -36,7 +36,9 @@
                         </paper-radio-group>
                         <hr class="horizontal-rule" />
                         <iron-label>Age</iron-label>
-                        
+                        <paper-input label="Please enter your age." type="number">
+                            <div suffix> years</div>
+                        </paper-input>
                     </div>
                     <div class="card-actions">
                         <paper-button>Submit</paper-button>
