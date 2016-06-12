@@ -34,9 +34,10 @@
                             <paper-radio-button name="male">Male</paper-radio-button>
                             <paper-radio-button name="female">Female</paper-radio-button>
                         </paper-radio-group>
-                        <hr class="horizontal-rule" />
+                        <br />
+                        <br />
                         <iron-label>Age</iron-label>
-                        <paper-input label="Please enter your age." type="number">
+                        <paper-input label="Please enter your age." type="number" no-label-float>
                             <div suffix> years</div>
                         </paper-input>
                     </div>
