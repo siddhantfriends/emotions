@@ -15,8 +15,7 @@
         <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html" />
         <link rel="import" href="bower_components/paper-radio-button/paper-radio-button.html" />
         <link rel="import" href="bower_components/paper-input/paper-input.html" />
-        <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu-light.html" />
-        <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu-icons.html" />
+        <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
         <link rel="import" href="bower_components/paper-listbox/paper-listbox.html" />
         <link rel="import" href="bower_components/paper-item/paper-item.html" />
         
