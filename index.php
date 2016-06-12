@@ -26,13 +26,11 @@
 
             <paper-card id="user-details-1" heading="Please fill the details below:">
                 <div class="card-content">
-                    <iron-label>
-                        Gender
-                        <paper-radio-group>
-                            <paper-radio-button>Male</paper-radio-button>
-                            <paper-radio-button>Female</paper-radio-button>
-                        </paper-radio-group>
-                    </iron-label>
+                    <iron-label id="gender-label">Gender</iron-label>
+                    <paper-radio-group aria-labelledby="gender-label">
+                        <paper-radio-button name="male">Male</paper-radio-button>
+                        <paper-radio-button name="female">Female</paper-radio-button>
+                    </paper-radio-group>
                 </div>
                 <div class="card-actions">
                     <paper-button>Some action</paper-button>
