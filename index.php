@@ -73,7 +73,7 @@ EDUCATIONDROPDOWN;
                             </paper-listbox>
                         </paper-dropdown-menu>
                         <br />
-                        <iron-label for="occupation">Occupation</iron-label>
+                        <iron-label for="occupation">Occupation</iron-label><br />
                         <div id="occupation">
                             <iron-label for="education-dropdown">Education</iron-label><br />
                             <paper-dropdown-menu id="education-dropdown" label="Education" no-label-float>
