@@ -40,6 +40,16 @@ EDUCATIONDROPDOWN;
                 <paper-item>$row[0]</paper-item>
 EDUCATIONDROPDOWN;
             }
+            
+            $sqlQuery = "SELECT [Status] FROM [dbo].[EmploymentStatus]";
+            $result = $conn->query($sqlQuery);
+            $employmentStatusDropdown = <<<EMPLOYMENTSTATUSDROPDOWN
+EMPLOYMENTSTATUSDROPDOWN;
+            foreach ($result as $row) {
+                $employmentStatusDropdown .= <<<EMPLOYMENTSTATUSDROPDOWN
+                <paper-item>$row[0]</paper-item>
+EMPLOYMENTSTATUSDROPDOWN;
+            }
         ?>
         
         <!-- Importing css -->
@@ -83,11 +93,18 @@ EDUCATIONDROPDOWN;
                                     <?php echo $educationDropdown ?>
                                 </paper-listbox>
                             </paper-dropdown-menu>
-                            <br />
+                            <br /><br />
                             <iron-label for="degree-title">
                                 Degree title <span>(university students only)</span>
                             </iron-label>
                             <paper-input id="degree-title" no-label-float></paper-input>
+                            <br /><br />
+                            <iron-label for="employment-status-dropdown">Employment Status</iron-label>
+                            <paper-dropdown-menu id="employment-status-dropdown" label="Employment Status" no-label-float>
+                                <paper-listbox class="dropdown-content">
+                                    <?php echo $employmentStatusDropdown ?>
+                                </paper-listbox>
+                            </paper-dropdown-menu>
                         </div>
                     </div>
                     <div class="card-actions">
