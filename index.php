@@ -72,8 +72,8 @@ EDUCATIONDROPDOWN;
                                 <?php echo $nationalityDropdown ?>
                             </paper-listbox>
                         </paper-dropdown-menu>
-                        <br />
-                        <iron-label for="occupation">Occupation</iron-label><br />
+                        <br /><br />
+                        <iron-label for="occupation">Occupation</iron-label>
                         <div id="occupation">
                             <iron-label for="education-dropdown">Education</iron-label><br />
                             <paper-dropdown-menu id="education-dropdown" label="Education" no-label-float>
