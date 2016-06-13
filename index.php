@@ -54,7 +54,7 @@
                             </paper-listbox>
                         </paper-dropdown-menu>
                         <?php
-                            $sqlQuery = "SELECT [Country] FROM [dbo].[Nationality]";
+                            $sqlQuery = "SELECT * FROM [dbo].[Nationality]";
                             $result = $conn->query($sqlQuery);
                             foreach ($result as $row) {
                                 print_r($row[]);
