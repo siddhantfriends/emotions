@@ -32,3 +32,7 @@ hr.horizontal-rule {
 paper-input#age-input {
     width: 180px;
 }
+
+div#occupation {
+    margin-top: 10px;
+}
