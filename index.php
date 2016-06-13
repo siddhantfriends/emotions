@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <?php require_once "essentials/database_conn.php"; ?>
         <!-- Adding polyfill support. -->
         <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
@@ -52,6 +53,13 @@
                                 <paper-item>diplodocus</paper-item>
                             </paper-listbox>
                         </paper-dropdown-menu>
+                        <?php
+                            $sqlQuery = "SELECT * FROM [dbo].[Nationality]";
+                            $result = $conn->query($sqlQuery);
+                            foreach ($result as $row) {
+                                print_r($row);
+                            }
+                        ?>
                     </div>
                     <div class="card-actions">
                         <paper-button>Submit</paper-button>
