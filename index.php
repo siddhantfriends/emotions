@@ -98,8 +98,8 @@ EMPLOYMENTSTATUSDROPDOWN;
                                 Degree title <span>(university students only)</span>
                             </iron-label>
                             <paper-input id="degree-title" no-label-float></paper-input>
-                            <br /><br />
-                            <iron-label for="employment-status-dropdown">Employment Status</iron-label>
+                            <br />
+                            <iron-label for="employment-status-dropdown">Employment Status</iron-label><br />
                             <paper-dropdown-menu id="employment-status-dropdown" label="Employment Status" no-label-float>
                                 <paper-listbox class="dropdown-content">
                                     <?php echo $employmentStatusDropdown ?>
