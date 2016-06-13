@@ -75,7 +75,9 @@ EDUCATIONDROPDOWN;
                         <br /><br />
                         <iron-label for="occupation">Occupation</iron-label>
                         <div id="occupation">
-                            <iron-label for="education-dropdown">Education</iron-label><br />
+                            <iron-label for="education-dropdown">
+                                Education <span>(If you are not currently in education, please select your highest level achieved.)</span>
+                            </iron-label><br />
                             <paper-dropdown-menu id="education-dropdown" label="Education" no-label-float>
                                 <paper-listbox class="dropdown-content">
                                     <?php echo $educationDropdown ?>
