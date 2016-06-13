@@ -57,7 +57,7 @@
                             $sqlQuery = "SELECT [Country] FROM [dbo].[Nationality]";
                             $result = $conn->query($sqlQuery);
                             foreach ($result as $row) {
-                                print_r($row);
+                                print_r($row[0]);
                             }
                         ?>
                     </div>
