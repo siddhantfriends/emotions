@@ -21,7 +21,7 @@
         <link rel="import" href="bower_components/paper-item/paper-item.html" />
         
         <?php
-            $sqlQuery = "SELECT * FROM [dbo].[Questionaire] WHERE [Type]=1";
+            $sqlQuery = "SELECT * FROM [dbo].[Questionaire] WHERE [Type]='1'";
             $result = $conn->query($sqlQuery);
             $nationalityDropdown = <<<NATIONALITYDROPDOWN
 NATIONALITYDROPDOWN;
