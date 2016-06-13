@@ -76,13 +76,18 @@ EDUCATIONDROPDOWN;
                         <iron-label for="occupation">Occupation</iron-label>
                         <div id="occupation">
                             <iron-label for="education-dropdown">
-                                Education
+                                Education <span>(If you are not currently in education, please select your highest level achieved.)</span>
                             </iron-label><br />
-                            <paper-dropdown-menu id="education-dropdown" label="If you are not currently in education, please select your highest level achieved." no-label-float>
+                            <paper-dropdown-menu id="education-dropdown" label="Education" no-label-float>
                                 <paper-listbox class="dropdown-content">
                                     <?php echo $educationDropdown ?>
                                 </paper-listbox>
                             </paper-dropdown-menu>
+                            <br />
+                            <iron-label for="degree-title">
+                                Degree title <span>(university students only)</span>
+                            </iron-label>
+                            <paper-input id="degree-title" no-label-float></paper-input>
                         </div>
                     </div>
                     <div class="card-actions">
