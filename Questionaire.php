@@ -21,7 +21,7 @@
         <link rel="import" href="bower_components/paper-item/paper-item.html" />
         
         <?php
-            $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='1'";
+            $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='IUIPC'";
             $result = $conn->query($sqlQuery);
             $nationalityDropdown = <<<NATIONALITYDROPDOWN
 NATIONALITYDROPDOWN;
@@ -38,13 +38,13 @@ NATIONALITYDROPDOWN;
     <body>
         <div id="content">
             <paper-toolbar>
-                <span class="title">Research</span>
+                <span class="title">Questionnaire</span>
             </paper-toolbar>
             
             <div id="center">
                 <paper-card id="user-details-1" heading="Questionnaire">
                     <div class="card-content">
-                        <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br />For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</iron-label>
+                        <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>
                         <br />
                         
                         <iron-label for="nationality-dropdown">Questions</iron-label><br />
