@@ -50,7 +50,7 @@ QUESTIONGRABBER;
                     <div class="card-content">
                         <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>
                         <br />
-<!--                        <paper-item>--><?php //echo $questionGrabber ?><!--</paper-item>-->
+                        <paper-item><?php echo $questionGrabber ?> </br></paper-item>
                         <paper-textarea label="textarea for question"></paper-textarea>
 
 
