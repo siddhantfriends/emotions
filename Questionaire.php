@@ -60,7 +60,7 @@ QUESTIONGRABBER;
 
                         <?php
                         for ($i = 0; $i < count($row); $i++) {
-                            echo '<paper-item>'.$questionGrabber.'</br></paper-item>';
+                            echo '<paper-item>';$questionGrabber;'</br></paper-item>';
                             echo '<paper-input label="testing input"></paper-input>';
                         }
                         ?>
