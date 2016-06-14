@@ -105,8 +105,8 @@ EMPLOYMENTSTATUSDROPDOWN;
                             </paper-dropdown-menu>
                         </div>
                     </div>
-                    <div class="card-actions end">
-                        <paper-button>Submit</paper-button>
+                    <div class="card-actions">
+                        <paper-button id="submit-button">Submit</paper-button>
                     </div>
                 </paper-card>
             </div>
