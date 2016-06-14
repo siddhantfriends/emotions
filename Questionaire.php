@@ -53,7 +53,7 @@ QUESTIONGRABBER;
 
                         <?php
                         for ($i = 0; $i < count($row); $i++) {
-                        "<paper-item>"; echo $questionGrabber; " </br></paper-item><paper-input label= &quot answer? &quot ></paper-input>";
+                        "<paper-item>"; echo $questionGrabber; " </br></paper-item><paper-input></paper-input>";
                         }
                         ?>
 <!-- text area not displaying-->
