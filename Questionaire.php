@@ -23,12 +23,13 @@
         <?php
             $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='IUIPC'";
             $result = $conn->query($sqlQuery);
-            $nationalityDropdown = <<<NATIONALITYDROPDOWN
-NATIONALITYDROPDOWN;
+            $questionGrabber = <<<QUESTIONGRABBER
+
+QUESTIONGRABBER;
             foreach ($result as $row) {
-                $nationalityDropdown .= <<<NATIONALITYDROPDOWN
+                $questionGrabber .= <<<QUESTIONGRABBER
                 <paper-item>$row[0]</paper-item>
-NATIONALITYDROPDOWN;
+QUESTIONGRABBER;
             }
         ?>
         
@@ -36,24 +37,16 @@ NATIONALITYDROPDOWN;
         <link rel="stylesheet" type="text/css" href="style/main.css" />
     </head>
     <body>
-        <div id="content">
-            <paper-toolbar>
-                <span class="title">Questionnaire</span>
-            </paper-toolbar>
+        <div id="content" class="style-scope sample-content">
+            <?php include_once "include/title-bar.php"; ?>
             
             <div id="center">
                 <paper-card id="user-details-1" heading="Questionnaire">
                     <div class="card-content">
-                        <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>
+                        <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>
                         <br />
-                        
-                        <iron-label for="nationality-dropdown">Questions</iron-label><br />
-                        <paper-dropdown-menu id="nationality-dropdown" label="Nationality" no-label-float>
-                            <paper-listbox class="dropdown-content">
-                                <?php echo $nationalityDropdown ?>
-                            </paper-listbox>
-                        </paper-dropdown-menu>
-                        
+                        <paper-item><?php echo $questionGrabber ?></paper-item>
+                        <paper-textarea label="autoresizing textarea input"></paper-textarea>
                     </div>
                     <div class="card-actions">
                         <paper-button>Submit</paper-button>

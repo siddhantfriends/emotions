@@ -40,3 +40,6 @@ paper-input#age-input {
 div#occupation {
     margin-top: 10px;
 }
+paper-scroll-header-panel {
+    height: 100%;
+}
