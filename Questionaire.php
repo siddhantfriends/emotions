@@ -15,11 +15,12 @@
         <link rel="import" href="bower_components/iron-label/iron-label.html" />
         <link rel="import" href="bower_components/paper-input/paper-input.html" />
         <link rel="import" href="bower_components/paper-item/paper-item.html" />
+        <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html" />
         <link rel="import" href="bower_components/iron-form-element-behavior/iron-form-element-behavior.html">
         <link rel="import" href="bower_components/paper-input/paper-input-behavior.html">
-        <link rel="import" href="bower_components/paper-input/paper-input-container.html">
         <link rel="import" href="bower_components/paper-input/paper-input-char-counter.html">
+        <link rel="import" href="bower_components/paper-input/paper-input-container.html">
         <link rel="import" href="bower_components/paper-input/paper-input-error.html">
 
 
@@ -51,6 +52,13 @@ QUESTIONGRABBER;
                         <br />
 <!--                        <paper-item>--><?php //echo $questionGrabber ?><!--</paper-item>-->
                         <paper-textarea label="textarea for question"></paper-textarea>
+
+
+                        <paper-input label="text input"></paper-input>
+                        <paper-textarea label="autoresizing textarea input"></paper-textarea>
+                        <paper-input label="password input" type="password"></paper-input>
+                        <paper-input label="disabled input" disabled></paper-input>
+
                     </div>
                     <div class="card-actions">
                         <paper-button>Submit</paper-button>
