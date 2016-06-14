@@ -57,9 +57,7 @@ EMPLOYMENTSTATUSDROPDOWN;
     </head>
     <body>
         <div id="content">
-            <paper-toolbar>
-                <span class="title">Research</span>
-            </paper-toolbar>
+            <?php include_once "include/title-bar.php"; ?>
             
             <div id="center">
                 <paper-card id="user-details-1" heading="Please fill the details below:">
