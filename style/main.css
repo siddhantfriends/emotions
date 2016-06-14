@@ -8,7 +8,7 @@ body > div#content {
     margin: auto;
 }
 
-paper-toolbar {
+paper-toolbar > div#topBar > span {
     font-size: 24px;
 }
 
