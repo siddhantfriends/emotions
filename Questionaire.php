@@ -41,7 +41,7 @@ QUESTIONGRABBER;
             foreach ($result as $row) {
                 $questionGrabber .= <<<QUESTIONGRABBER
                 <paper-item>$row[0]</paper-item>
-                <paper-input label="Write answer here"></paper-input>
+                <paper-slider id="ratings" pin snaps max="10" max-markers="10" step="1" value="5"></paper-slider>
 QUESTIONGRABBER;
             }
         ?>
@@ -60,11 +60,6 @@ QUESTIONGRABBER;
                         <br />
 
                         <?php echo $questionGrabber; ?>
-<!-- text area not displaying-->
-
-<!--                        <paper-textarea label="textarea for question"></paper-textarea>-->
-
-
                         <style is="custom-style">
                             .caption {
                                 padding-left: 12px;
@@ -74,9 +69,6 @@ QUESTIONGRABBER;
                                 --paper-slider-secondary-color: var(--paper-red-a200);
                             }
                         </style>
-                        <div>Ratings: <span id="ratingsLabel" class="caption"></span></div><br>
-                        <paper-slider id="ratings" pin snaps max="10" max-markers="10" step="1" value="5"></paper-slider>
-                        <paper-slider value="21"></paper-slider>
                         <script>
                             document.addEventListener('WebComponentsReady', function() {
                                 var ratings = document.querySelector('#ratings');
@@ -91,8 +83,6 @@ QUESTIONGRABBER;
                                 });
                             });
                         </script>
-
-
                     </div>
                     <div class="card-actions">
                         <paper-button>Submit</paper-button>
