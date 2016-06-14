@@ -31,6 +31,7 @@
         <link rel="import" href="bower_components/paper-input/paper-input.html"/>
         <link rel="import" href="bower_components/paper-progress/paper-progress.html"/>
         <link rel="import" href="bower_components/paper-styles/color.html"/>
+        <link rel="import" href="bower_components/paper-slider/paper-slider.html" />
 
         <?php
             $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='IUIPC'";
