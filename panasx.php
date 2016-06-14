@@ -34,7 +34,7 @@
         <link rel="import" href="bower_components/paper-slider/paper-slider.html" />
 
         <?php
-            $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='IUIPC'";
+            $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='panasx'";
             $result = $conn->query($sqlQuery);
             $questionGrabber = <<<QUESTIONGRABBER
 
@@ -57,7 +57,7 @@ QUESTIONGRABBER;
             <div id="center">
                 <paper-card id="user-details-1" heading="Questionnaire">
                     <div class="card-content">
-                        <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>
+                        <iron-label id="info-label">Read each item and then select the appropriate answer from the scale next to that word. Indicate to what extent you have felt this way while watching the video. Use the following scale to record your answers.<br /><br /><b>Please select the option closest to your feelings when you watched the video.</b></iron-label>
                         <br />
 
                         <?php echo $questionGrabber; ?>
