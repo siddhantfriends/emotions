@@ -34,7 +34,7 @@
         <link rel="import" href="bower_components/paper-slider/paper-slider.html" />
 
         <?php
-            $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='IUIPC'";
+            $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='panasx'";
             $result = $conn->query($sqlQuery);
             $questionGrabber = <<<QUESTIONGRABBER
 
