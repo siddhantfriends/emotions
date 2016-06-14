@@ -53,14 +53,13 @@ QUESTIONGRABBER;
 
                         <?php
                         for ($i = 0; $i < count($row); $i++) {
-                        "<paper-item>"; echo $questionGrabber; " </br></paper-item>";
-                            "<paper-textarea label=\"textarea for question\"></paper-textarea>
-                             <paper-input label=\"text input\"></paper-input>";
+                        "<paper-item>"; echo $questionGrabber; " </br></paper-item><paper-input label= &quot answer? &quot ></paper-input>";
                         }
                         ?>
 <!-- text area not displaying-->
 
-
+<!--                        <paper-textarea label="textarea for question"></paper-textarea>-->
+<!--                        <paper-input label="text input"></paper-input>-->
 
 
                     </div>
