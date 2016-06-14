@@ -59,7 +59,7 @@ QUESTIONGRABBER;
 <!-- text area not displaying-->
 
 <!--                        <paper-textarea label="textarea for question"></paper-textarea>-->
-<!--                        <paper-input label="text input"></paper-input>-->
+                        <paper-input label="testing input"></paper-input>
 
 
                     </div>
