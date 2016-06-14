@@ -61,6 +61,33 @@ QUESTIONGRABBER;
 <!--                        <paper-textarea label="textarea for question"></paper-textarea>-->
                         <paper-input label="testing input"></paper-input>
 
+                        <style is="custom-style">
+                            .caption {
+                                padding-left: 12px;
+                                color: #a0a0a0;
+                            }
+                            #grade {
+                                --paper-slider-secondary-color: var(--paper-red-a200);
+                            }
+                        </style>
+                        <div>Ratings: <span id="ratingsLabel" class="caption"></span></div><br>
+                        <paper-slider id="ratings" pin snaps max="10" max-markers="10" step="1" value="5"></paper-slider>
+
+                        <script>
+                            document.addEventListener('WebComponentsReady', function() {
+                                var ratings = document.querySelector('#ratings');
+                                ratings.addEventListener('value-change', function() {
+                                    document.querySelector('#ratingsLabel').textContent = ratings.value;
+                                });
+
+                                var grade = document.querySelector('#grade');
+                                grade.addEventListener('value-change', function() {
+                                    var label = (grade.value < grade.secondaryProgress) ? "Fail" : "Pass" ;
+                                    document.querySelector('#gradeLabel').textContent = grade.value + " (" + label + ")";
+                                });
+                            });
+                        </script>
+
 
                     </div>
                     <div class="card-actions">
