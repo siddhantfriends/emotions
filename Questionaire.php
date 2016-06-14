@@ -23,7 +23,14 @@
         <link rel="import" href="bower_components/paper-input/paper-input-container.html">
         <link rel="import" href="bower_components/paper-input/paper-input-error.html">
 
-
+        <link rel="import" href="bower_components/iron-a11y-keys-behavior/iron-a11y-keys-behavior.html"/>
+        <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html"/>
+        <link rel="import" href="bower_components/iron-form-element-behavior/iron-form-element-behavior.html"/>
+        <link rel="import" href="bower_components/iron-range-behavior/iron-range-behavior.html"/>
+        <link rel="import" href="bower_components/paper-behaviors/paper-inky-focus-behavior.html"/>
+        <link rel="import" href="bower_components/paper-input/paper-input.html"/>
+        <link rel="import" href="bower_components/paper-progress/paper-progress.html"/>
+        <link rel="import" href="bower_components/paper-styles/color.html"/>
 
         <?php
             $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='IUIPC'";
