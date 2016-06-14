@@ -19,7 +19,10 @@
         <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
         <link rel="import" href="bower_components/paper-listbox/paper-listbox.html" />
         <link rel="import" href="bower_components/paper-item/paper-item.html" />
-        
+        <link rel="import" href="bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html" />
+
+
+
         <?php
             $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='IUIPC'";
             $result = $conn->query($sqlQuery);
@@ -46,7 +49,7 @@ QUESTIONGRABBER;
                         <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>
                         <br />
 <!--                        <paper-item>--><?php //echo $questionGrabber ?><!--</paper-item>-->
-                        <paper-textarea label="autoresizing textarea input"></paper-textarea>
+                        <paper-textarea label="textarea for question"></paper-textarea>
                     </div>
                     <div class="card-actions">
                         <paper-button>Submit</paper-button>
