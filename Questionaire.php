@@ -60,13 +60,14 @@ QUESTIONGRABBER;
 
                         <?php
                         for ($i = 0; $i < count($row); $i++) {
-                        "<paper-item>"; echo $questionGrabber; " </br></paper-item><paper-input></paper-input>";
+                        "<paper-item>"; echo $questionGrabber; " </br></paper-item>";
+                            "<paper-input label=\"testing input\"></paper-input>";
                         }
                         ?>
 <!-- text area not displaying-->
 
 <!--                        <paper-textarea label="textarea for question"></paper-textarea>-->
-                        <paper-input label="testing input"></paper-input>
+
 
                         <style is="custom-style">
                             .caption {
@@ -79,7 +80,7 @@ QUESTIONGRABBER;
                         </style>
                         <div>Ratings: <span id="ratingsLabel" class="caption"></span></div><br>
                         <paper-slider id="ratings" pin snaps max="10" max-markers="10" step="1" value="5"></paper-slider>
-
+                        <paper-slider value="21"></paper-slider>
                         <script>
                             document.addEventListener('WebComponentsReady', function() {
                                 var ratings = document.querySelector('#ratings');
