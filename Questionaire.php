@@ -60,8 +60,8 @@ QUESTIONGRABBER;
 
                         <?php
                         for ($i = 0; $i < count($row); $i++) {
-                        "<paper-item>"; echo $questionGrabber; " </br></paper-item>";
-                            "<paper-input label=\"testing input\"></paper-input>";
+                            echo '<paper-item>  .$questionGrabber;  </br></paper-item>';
+                            echo '<paper-input label=";"testing input";"></paper-input>';
                         }
                         ?>
 <!-- text area not displaying-->
