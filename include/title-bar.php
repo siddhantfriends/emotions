@@ -1,3 +1,3 @@
 <paper-toolbar>
-    <span class="bottom title">Research</span>
+    <span class="title" justify="start">Research</span>
 </paper-toolbar>
