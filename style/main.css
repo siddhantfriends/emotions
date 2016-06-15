@@ -48,3 +48,9 @@ paper-button#submit-button {
         @apply(--layout-center-center);
     }
 }
+
+paper-input#age-input, 
+paper-dropdown-menu#nationality-dropdown, paper-dropdown-menu#nationality-dropdown paper-listbox,
+paper-dropdown-menu#education-dropdown, paper-dropdown-menu#education-dropdown paper-listbox {
+    width: 250px;
+}

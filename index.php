@@ -64,7 +64,7 @@ EMPLOYMENTSTATUSDROPDOWN;
                     <div class="card-content">
                         <iron-label id="gender-label">Gender</iron-label>
                         <br />
-                        <paper-radio-group aria-labelledby="gender-label">
+                        <paper-radio-group id="gender-radio-group" aria-labelledby="gender-label">
                             <paper-radio-button name="male">Male</paper-radio-button>
                             <paper-radio-button name="female">Female</paper-radio-button>
                         </paper-radio-group>
