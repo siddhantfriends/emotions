@@ -53,7 +53,8 @@ paper-button#submit-button {
 paper-input#age-input, 
 paper-dropdown-menu#nationality-dropdown, paper-dropdown-menu#nationality-dropdown paper-listbox,
 paper-dropdown-menu#education-dropdown, paper-dropdown-menu#education-dropdown paper-listbox,
-paper-dropdown-menu#employment-status-dropdown, paper-input#degree-title {
+paper-dropdown-menu#employment-status-dropdown, paper-dropdown-menu#employment-status-dropdown paper-listbox,
+paper-input#degree-title {
     width: 250px;
 }
 
