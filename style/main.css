@@ -16,6 +16,10 @@ paper-card {
     width: 100%;
 }
 
+paper-card .card-content, paper-card div.header, paper-button#submit-button {
+    margin: 20px;
+}
+
 paper-card#user-details-1 {
     margin-top: 20px;
 }
@@ -36,9 +40,6 @@ paper-input#age-input {
     width: 180px;
 }
 
-div#occupation {
-    margin-top: 10px;
-}
 paper-scroll-header-panel {
     height: 100%;
 }
@@ -51,6 +52,59 @@ paper-button#submit-button {
 
 paper-input#age-input, 
 paper-dropdown-menu#nationality-dropdown, paper-dropdown-menu#nationality-dropdown paper-listbox,
-paper-dropdown-menu#education-dropdown, paper-dropdown-menu#education-dropdown paper-listbox {
+paper-dropdown-menu#education-dropdown, paper-dropdown-menu#education-dropdown paper-listbox,
+paper-dropdown-menu#employment-status-dropdown, paper-input#degree-title {
     width: 250px;
+}
+
+paper-dropdown-menu#nationality-dropdown paper-listbox {
+    height: 400px;
+}
+
+iron-label[for="age-input"], iron-label[for="nationality-dropdown"],
+iron-label[for="occupation"], iron-label#gender-label {
+    font-size: 22px;
+}
+
+paper-button.green {
+    background-color: var(--paper-green-500);
+}
+
+iron-label#gender-label, paper-radio-group#gender-radio-group {
+    position: relative;
+    top: -30px;
+}
+
+iron-label[for="age-input"], paper-input#age-input {
+    position: relative;
+    top: -20px;
+}
+
+iron-label[for="nationality-dropdown"], paper-dropdown-menu#nationality-dropdown {
+    position: relative;
+    top: 0px;
+}
+
+iron-label[for="occupation"], div#occupation {
+    position: relative;
+    top: 20px;
+}
+
+iron-label[for="education-dropdown"], paper-dropdown-menu#education-dropdown {
+    position: relative;
+    top: 10px;
+}
+
+iron-label[for="degree-title"], paper-input#degree-title {
+    position: relative;
+    top: 20px
+}
+
+iron-label[for="employment-status-dropdown"], paper-dropdown-menu#employment-status-dropdown {
+    position: relative;
+    top: 30px;
+}
+
+div.index.clearfix {
+    height: 30px;
 }

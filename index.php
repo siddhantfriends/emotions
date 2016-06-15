@@ -68,19 +68,18 @@ EMPLOYMENTSTATUSDROPDOWN;
                             <paper-radio-button name="male">Male</paper-radio-button>
                             <paper-radio-button name="female">Female</paper-radio-button>
                         </paper-radio-group>
-                        <br /><br />
+                        <br />
                         <iron-label for="age-input">Age</iron-label>
                         <paper-input id="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90" maxlength="2" text-align="right">
                             <div suffix>years</div>
                         </paper-input>
-                        <br />
                         <iron-label for="nationality-dropdown">Nationality</iron-label><br />
                         <paper-dropdown-menu id="nationality-dropdown" label="Nationality" no-label-float>
                             <paper-listbox class="dropdown-content">
                                 <?php echo $nationalityDropdown ?>
                             </paper-listbox>
                         </paper-dropdown-menu>
-                        <br /><br />
+                        <br />
                         <iron-label for="occupation">Occupation</iron-label>
                         <div id="occupation">
                             <iron-label for="education-dropdown">
@@ -91,22 +90,22 @@ EMPLOYMENTSTATUSDROPDOWN;
                                     <?php echo $educationDropdown ?>
                                 </paper-listbox>
                             </paper-dropdown-menu>
-                            <br /><br />
+                            <br />
                             <iron-label for="degree-title">
                                 Degree title <span>(university students only)</span>
                             </iron-label>
-                            <paper-input id="degree-title" no-label-float></paper-input>
-                            <br />
+                            <paper-input id="degree-title" no-label-float label="Degree"></paper-input>
                             <iron-label for="employment-status-dropdown">Employment Status</iron-label><br />
                             <paper-dropdown-menu id="employment-status-dropdown" label="Employment Status" no-label-float>
                                 <paper-listbox class="dropdown-content">
                                     <?php echo $employmentStatusDropdown ?>
                                 </paper-listbox>
                             </paper-dropdown-menu>
+                            <div class="index clearfix"></div>
                         </div>
                     </div>
                     <div class="card-actions">
-                        <paper-button id="submit-button">Submit</paper-button>
+                        <paper-button id="submit-button" raised class="green">Submit</paper-button>
                     </div>
                 </paper-card>
             </div>
