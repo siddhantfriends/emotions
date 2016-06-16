@@ -57,6 +57,7 @@ EMPLOYMENTSTATUSDROPDOWN;
     </head>
     <body>
         <div id="content">
+            <form is="iron-form" id="form" method="post" action="test-form-handler.php">
             <?php include_once "include/title-bar.php"; ?>
             
             <div id="center">
@@ -64,17 +65,17 @@ EMPLOYMENTSTATUSDROPDOWN;
                     <div class="card-content">
                         <iron-label id="gender-label">Gender</iron-label>
                         <br />
-                        <paper-radio-group id="gender-radio-group" aria-labelledby="gender-label">
+                        <paper-radio-group id="gender-radio-group" name="gender-radio-group" aria-labelledby="gender-label">
                             <paper-radio-button name="male">Male</paper-radio-button>
                             <paper-radio-button name="female">Female</paper-radio-button>
                         </paper-radio-group>
                         <br />
                         <iron-label for="age-input">Age</iron-label>
-                        <paper-input id="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90" maxlength="2" text-align="right">
+                        <paper-input id="age-input" name="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90" maxlength="2" text-align="right">
                             <div suffix>years</div>
                         </paper-input>
                         <iron-label for="nationality-dropdown">Nationality</iron-label><br />
-                        <paper-dropdown-menu id="nationality-dropdown" label="Nationality" no-label-float>
+                        <paper-dropdown-menu id="nationality-dropdown" name="nationality-dropdown" label="Nationality" no-label-float>
                             <paper-listbox class="dropdown-content">
                                 <?php echo $nationalityDropdown ?>
                             </paper-listbox>
@@ -85,7 +86,7 @@ EMPLOYMENTSTATUSDROPDOWN;
                             <iron-label for="education-dropdown">
                                 Education <span>(If you are not currently in education, please select your highest level achieved.)</span>
                             </iron-label><br />
-                            <paper-dropdown-menu id="education-dropdown" label="Education" no-label-float>
+                            <paper-dropdown-menu id="education-dropdown" name="education-dropdown" label="Education" no-label-float>
                                 <paper-listbox class="dropdown-content">
                                     <?php echo $educationDropdown ?>
                                 </paper-listbox>
@@ -94,9 +95,9 @@ EMPLOYMENTSTATUSDROPDOWN;
                             <iron-label for="degree-title">
                                 Degree title <span>(university students only)</span>
                             </iron-label>
-                            <paper-input id="degree-title" no-label-float label="Degree"></paper-input>
+                            <paper-input id="degree-title" name="degree-title" no-label-float label="Degree"></paper-input>
                             <iron-label for="employment-status-dropdown">Employment Status</iron-label><br />
-                            <paper-dropdown-menu id="employment-status-dropdown" label="Employment Status" no-label-float>
+                            <paper-dropdown-menu id="employment-status-dropdown" name="employment-status-dropdown" label="Employment Status" no-label-float>
                                 <paper-listbox class="dropdown-content">
                                     <?php echo $employmentStatusDropdown ?>
                                 </paper-listbox>
@@ -105,10 +106,15 @@ EMPLOYMENTSTATUSDROPDOWN;
                         </div>
                     </div>
                     <div class="card-actions">
-                        <paper-button id="submit-button" raised class="green">Submit</paper-button>
+                        <paper-button id="submit-button" raised onclick="submitForm()" class="green">Submit</paper-button>
                     </div>
                 </paper-card>
             </div>
         </div>
     </body>
+    <script>
+        function submitForm() {
+          document.getElementById('form').submit();
+        }
+    </script>
 </html>
