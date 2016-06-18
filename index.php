@@ -35,18 +35,23 @@
                     <div class="card-content">
                         <iron-label id="gender-label">Gender</iron-label>
                         <br />
-                        <paper-radio-group id="gender-radio-group" name="gender-radio-group" aria-labelledby="gender-label">
-                            <paper-radio-button name="male">Male</paper-radio-button>
-                            <paper-radio-button name="female">Female</paper-radio-button>
-                        </paper-radio-group>
+                        <template is="dom-bind">
+                            <paper-radio-group id="gender-radio-group" aria-labelledby="gender-label" selected="{{gender}}">
+                                <paper-radio-button name="male">Male</paper-radio-button>
+                                <paper-radio-button name="female">Female</paper-radio-button>
+                            </paper-radio-group>
+                            <paper-input id="gender" hidden="true" value="{{gender}}" name="gender-radio-group" required error-message="This is a required field. Please select your gender."></paper-input>
+                            <p id="gender-error" style="visibility: hidden;">This is a required field. Please select your gender.</p>
+                        </template>
+
                         <br />
                         <iron-label for="age-input">Age</iron-label>
-                        <paper-input id="age-input" name="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90" maxlength="2" text-align="right">
+                        <paper-input id="age-input" name="age-input" label="Please enter your age." type="number" no-label-float min="18" max="90" maxlength="2" text-align="right" required error-message="This is a required field. Please enter your valid age.">
                             <div suffix>years</div>
                         </paper-input>
                         <iron-label for="nationality-dropdown">Nationality</iron-label><br />
                         <template is="dom-bind">
-                            <paper-dropdown-menu id="nationality-dropdown" label="Nationality" no-label-float>
+                            <paper-dropdown-menu id="nationality-dropdown" label="Nationality" no-label-float required error-message="This is a required field. Please select your nationality.">
                                 <paper-listbox attr-for-selected="value" class="dropdown-content" selected="{{nationality}}">
                                     <iron-ajax auto url="iron-ajax-handler" params='{"type":"nationality"}' handle-as="json" last-response="{{nationalityResponse}}"></iron-ajax>
 
@@ -64,7 +69,7 @@
                                 Education <span>(If you are not currently in education, please select your highest level achieved.)</span>
                             </iron-label><br />
                             <template is="dom-bind">
-                                <paper-dropdown-menu id="education-dropdown" label="Education" no-label-float>
+                                <paper-dropdown-menu id="education-dropdown" label="Education" no-label-float required error-message="This is a required field. Please select your education.">
                                     <paper-listbox attr-for-selected="value" class="dropdown-content" selected="{{education}}">
                                         <iron-ajax auto url="iron-ajax-handler" params='{"type":"education"}' handle-as="json" last-response="{{educationResponse}}"></iron-ajax>
 
@@ -83,7 +88,7 @@
                             <paper-input id="degree-title" name="degree-title" no-label-float label="Degree"></paper-input>
                             <iron-label for="employment-status-dropdown">Employment Status</iron-label><br />
                             <template is="dom-bind">
-                                <paper-dropdown-menu id="employment-status-dropdown" label="Employment Status" no-label-float>
+                                <paper-dropdown-menu id="employment-status-dropdown" label="Employment Status" no-label-float required error-message="This is a required field. Please select your employment status.">
                                     <paper-listbox attr-for-selected="value" class="dropdown-content" selected="{{employmentStatus}}">
                                         <iron-ajax auto url="iron-ajax-handler" params='{"type":"employment-status"}' handle-as="json" last-response="{{employmentStatusResponse}}"></iron-ajax>
 
@@ -94,8 +99,6 @@
                                 </paper-dropdown-menu>
                                 <input type="hidden" value="{{employmentStatus}}" name="employment-status-dropdown" />
                             </template>
-
-                            <div class="index clearfix"></div>
                         </div>
                     </div>
                     <div class="card-actions">
@@ -107,7 +110,32 @@
     </body>
     <script>
         function submitForm() {
-          document.getElementById('form').submit();
+            var genderError = document.getElementById('gender').validate();
+            var valid = [document.getElementById('age-input').validate(),
+                        document.getElementById('nationality-dropdown').validate(),
+                        document.getElementById('education-dropdown').validate(),
+                        document.getElementById('employment-status-dropdown').validate(),
+                        genderError];
+            var validated = false;
+
+            if (!genderError) {
+                document.getElementById('gender-error').style.visibility = "visible";
+            } else {
+                document.getElementById('gender-error').style.visibility = "hidden";
+            }
+
+            for (var i = 0; i < valid.length; i++) {
+                if (!valid[i]) {
+                    validated = false;
+                    break;
+                } else {
+                    validated = true;
+                }
+            }
+
+            if(validated) {
+                    document.getElementById('form').submit();
+            }
         }
     </script>
 </html>
