@@ -33,6 +33,7 @@
     "paper-listbox": "polymerelements/paper-listbox#^1.1.2",
     "paper-item": "PolymerElements/paper-item#^1.2.1",
     "paper-slider": "PolymerElements/paper-slider#^1.0.11",
-    "iron-form": "PolymerElements/iron-form#^1.0.16"
+    "iron-form": "PolymerElements/iron-form#^1.0.16",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.2.0"
   }
 }
