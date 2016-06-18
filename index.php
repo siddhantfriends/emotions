@@ -6,6 +6,7 @@
         <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
         <!-- Import elements to be used -->
+        <link rel="import" href="bower_components/polymer/polymer.html" />
         <link rel="import" href="bower_components/paper-card/paper-card.html" />
         <link rel="import" href="bower_components/paper-button/paper-button.html" />
         <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html" />
@@ -19,38 +20,7 @@
         <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
         <link rel="import" href="bower_components/paper-listbox/paper-listbox.html" />
         <link rel="import" href="bower_components/paper-item/paper-item.html" />
-        
-        <?php
-            $sqlQuery = "SELECT [Country] FROM [dbo].[Nationality]";
-            $result = $conn->query($sqlQuery);
-            $nationalityDropdown = <<<NATIONALITYDROPDOWN
-NATIONALITYDROPDOWN;
-            foreach ($result as $row) {
-                $nationalityDropdown .= <<<NATIONALITYDROPDOWN
-                <paper-item>$row[0]</paper-item>
-NATIONALITYDROPDOWN;
-            }
-        
-            $sqlQuery = "SELECT [Education] FROM [dbo].[Education]";
-            $result = $conn->query($sqlQuery);
-            $educationDropdown = <<<EDUCATIONDROPDOWN
-EDUCATIONDROPDOWN;
-            foreach ($result as $row) {
-                $educationDropdown .= <<<EDUCATIONDROPDOWN
-                <paper-item>$row[0]</paper-item>
-EDUCATIONDROPDOWN;
-            }
-            
-            $sqlQuery = "SELECT [Status] FROM [dbo].[EmploymentStatus]";
-            $result = $conn->query($sqlQuery);
-            $employmentStatusDropdown = <<<EMPLOYMENTSTATUSDROPDOWN
-EMPLOYMENTSTATUSDROPDOWN;
-            foreach ($result as $row) {
-                $employmentStatusDropdown .= <<<EMPLOYMENTSTATUSDROPDOWN
-                <paper-item>$row[0]</paper-item>
-EMPLOYMENTSTATUSDROPDOWN;
-            }
-        ?>
+        <link rel="import" href="bower_components/iron-ajax/iron-ajax.html" />
         
         <!-- Importing css -->
         <link rel="stylesheet" type="text/css" href="style/main.css" />
@@ -77,7 +47,13 @@ EMPLOYMENTSTATUSDROPDOWN;
                         <iron-label for="nationality-dropdown">Nationality</iron-label><br />
                         <paper-dropdown-menu id="nationality-dropdown" name="nationality-dropdown" label="Nationality" no-label-float>
                             <paper-listbox class="dropdown-content">
-                                <?php echo $nationalityDropdown ?>
+                                <template is="dom-bind">
+                                    <iron-ajax auto url="iron-ajax-handler" params='{"type":"nationality"}' handle-as="json" last-response="{{nationalityResponse}}"></iron-ajax>
+
+                                    <template is="dom-repeat" items="{{nationalityResponse}}">
+                                        <paper-item>{{item.Country}}</paper-item>
+                                    </template>
+                                </template>
                             </paper-listbox>
                         </paper-dropdown-menu>
                         <br />
@@ -88,7 +64,13 @@ EMPLOYMENTSTATUSDROPDOWN;
                             </iron-label><br />
                             <paper-dropdown-menu id="education-dropdown" name="education-dropdown" label="Education" no-label-float>
                                 <paper-listbox class="dropdown-content">
-                                    <?php echo $educationDropdown ?>
+                                    <template is="dom-bind">
+                                        <iron-ajax auto url="iron-ajax-handler" params='{"type":"education"}' handle-as="json" last-response="{{educationResponse}}"></iron-ajax>
+
+                                        <template is="dom-repeat" items="{{educationResponse}}">
+                                            <paper-item>{{item.Education}}</paper-item>
+                                        </template>
+                                    </template>
                                 </paper-listbox>
                             </paper-dropdown-menu>
                             <br />
@@ -99,7 +81,13 @@ EMPLOYMENTSTATUSDROPDOWN;
                             <iron-label for="employment-status-dropdown">Employment Status</iron-label><br />
                             <paper-dropdown-menu id="employment-status-dropdown" name="employment-status-dropdown" label="Employment Status" no-label-float>
                                 <paper-listbox class="dropdown-content">
-                                    <?php echo $employmentStatusDropdown ?>
+                                    <template is="dom-bind">
+                                        <iron-ajax auto url="iron-ajax-handler" params='{"type":"employment-status"}' handle-as="json" last-response="{{employmentStatusResponse}}"></iron-ajax>
+
+                                        <template is="dom-repeat" items="{{employmentStatusResponse}}">
+                                            <paper-item>{{item.Status}}</paper-item>
+                                        </template>
+                                    </template>
                                 </paper-listbox>
                             </paper-dropdown-menu>
                             <div class="index clearfix"></div>
