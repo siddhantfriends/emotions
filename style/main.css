@@ -16,7 +16,7 @@ paper-card {
     width: 100%;
 }
 
-paper-card .card-content, paper-card div.header, paper-button#submit-button {
+paper-card .card-content, paper-card div.header {
     margin: 20px;
 }
 
@@ -131,4 +131,8 @@ p#gender-error {
     color: #dd2c00;
     font-size: 12px;
     font-family: 'Roboto', 'Noto', sans-serif;
+}
+
+paper-button#submit-button {
+    width: 100%;
 }

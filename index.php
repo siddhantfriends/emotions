@@ -101,8 +101,8 @@
                             </template>
                         </div>
                     </div>
-                    <div class="card-actions">
-                        <paper-button id="submit-button" raised onclick="submitForm()" class="green">Submit</paper-button>
+                    <div class="card-actions" style="padding: 0px;">
+                        <paper-button id="submit-button" onclick="submitForm()" class="green">Submit</paper-button>
                     </div>
                 </paper-card>
             </div>
