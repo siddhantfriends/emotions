@@ -45,51 +45,56 @@
                             <div suffix>years</div>
                         </paper-input>
                         <iron-label for="nationality-dropdown">Nationality</iron-label><br />
-                        <paper-dropdown-menu id="nationality-dropdown" name="nationality-dropdown" label="Nationality" no-label-float>
-                            <paper-listbox class="dropdown-content">
-                                <template is="dom-bind">
+                        <template is="dom-bind">
+                            <paper-dropdown-menu id="nationality-dropdown" label="Nationality" no-label-float>
+                                <paper-listbox attr-for-selected="value" class="dropdown-content" selected="{{nationality}}">
                                     <iron-ajax auto url="iron-ajax-handler" params='{"type":"nationality"}' handle-as="json" last-response="{{nationalityResponse}}"></iron-ajax>
 
                                     <template is="dom-repeat" items="{{nationalityResponse}}">
-                                        <paper-item>{{item.Country}}</paper-item>
+                                        <paper-item value="{{item.ID}}">{{item.Country}}</paper-item>
                                     </template>
-                                </template>
-                            </paper-listbox>
-                        </paper-dropdown-menu>
+                                </paper-listbox>
+                            </paper-dropdown-menu>
+                            <input type="hidden" value="{{nationality}}" name="nationality-dropdown" />
+                        </template>
                         <br />
                         <iron-label for="occupation">Occupation</iron-label>
                         <div id="occupation">
                             <iron-label for="education-dropdown">
                                 Education <span>(If you are not currently in education, please select your highest level achieved.)</span>
                             </iron-label><br />
-                            <paper-dropdown-menu id="education-dropdown" name="education-dropdown" label="Education" no-label-float>
-                                <paper-listbox class="dropdown-content">
-                                    <template is="dom-bind">
+                            <template is="dom-bind">
+                                <paper-dropdown-menu id="education-dropdown" label="Education" no-label-float>
+                                    <paper-listbox attr-for-selected="value" class="dropdown-content" selected="{{education}}">
                                         <iron-ajax auto url="iron-ajax-handler" params='{"type":"education"}' handle-as="json" last-response="{{educationResponse}}"></iron-ajax>
 
                                         <template is="dom-repeat" items="{{educationResponse}}">
-                                            <paper-item>{{item.Education}}</paper-item>
+                                            <paper-item value="{{item.ID}}">{{item.Education}}</paper-item>
                                         </template>
-                                    </template>
-                                </paper-listbox>
-                            </paper-dropdown-menu>
+                                    </paper-listbox>
+                                </paper-dropdown-menu>
+                                <input type="hidden" value="{{education}}" name="education-dropdown" />
+                            </template>
+
                             <br />
                             <iron-label for="degree-title">
                                 Degree title <span>(university students only)</span>
                             </iron-label>
                             <paper-input id="degree-title" name="degree-title" no-label-float label="Degree"></paper-input>
                             <iron-label for="employment-status-dropdown">Employment Status</iron-label><br />
-                            <paper-dropdown-menu id="employment-status-dropdown" name="employment-status-dropdown" label="Employment Status" no-label-float>
-                                <paper-listbox class="dropdown-content">
-                                    <template is="dom-bind">
+                            <template is="dom-bind">
+                                <paper-dropdown-menu id="employment-status-dropdown" label="Employment Status" no-label-float>
+                                    <paper-listbox attr-for-selected="value" class="dropdown-content" selected="{{employmentStatus}}">
                                         <iron-ajax auto url="iron-ajax-handler" params='{"type":"employment-status"}' handle-as="json" last-response="{{employmentStatusResponse}}"></iron-ajax>
 
                                         <template is="dom-repeat" items="{{employmentStatusResponse}}">
-                                            <paper-item>{{item.Status}}</paper-item>
+                                            <paper-item value="{{item.ID}}">{{item.Status}}</paper-item>
                                         </template>
-                                    </template>
-                                </paper-listbox>
-                            </paper-dropdown-menu>
+                                    </paper-listbox>
+                                </paper-dropdown-menu>
+                                <input type="hidden" value="{{employmentStatus}}" name="employment-status-dropdown" />
+                            </template>
+
                             <div class="index clearfix"></div>
                         </div>
                     </div>
