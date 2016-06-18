@@ -50,13 +50,26 @@ paper-button#submit-button {
     }
 }
 
+/* --------------------------------------------------------------- */
+/* These elements should have difference of 6 px in width */
+/* --------------------------------------------------------------- */
+
 paper-input#age-input, 
-paper-dropdown-menu#nationality-dropdown, paper-dropdown-menu#nationality-dropdown paper-listbox,
-paper-dropdown-menu#education-dropdown, paper-dropdown-menu#education-dropdown paper-listbox,
-paper-dropdown-menu#employment-status-dropdown, paper-dropdown-menu#employment-status-dropdown paper-listbox,
+paper-dropdown-menu#nationality-dropdown,
+paper-dropdown-menu#education-dropdown,
+paper-dropdown-menu#employment-status-dropdown,
 paper-input#degree-title {
+    margin-top: 8px;
     width: 300px;
 }
+
+paper-dropdown-menu#nationality-dropdown paper-listbox,
+paper-dropdown-menu#education-dropdown paper-listbox,
+paper-dropdown-menu#employment-status-dropdown paper-listbox {
+    width: 294px;
+}
+
+/* --------------------------------------------------------------- */
 
 paper-dropdown-menu#nationality-dropdown paper-listbox {
     height: 400px;
