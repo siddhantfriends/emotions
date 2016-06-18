@@ -36,6 +36,8 @@
         else{$result->bindParam(':userDeg', null, PDO::PARAM_STR);}
         $result->bindParam(':userEmp', $_POST['employment-status-dropdown'], PDO::PARAM_STR);
         $result->execute();
+//        $id = mysqli_insert_id($conn);
+        echo $conn->lastInsertId(); 
         }
     ?>
 </body>
