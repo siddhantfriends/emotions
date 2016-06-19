@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+<!DOCTYPE html>
 <html>
 <body>
     <?php
@@ -21,21 +26,30 @@
             $stmt->bindParam(":age", $age, PDO::PARAM_INT);
             $stmt->bindParam(":nationality", $nationality, PDO::PARAM_INT);
             $stmt->bindParam(":education", $education, PDO::PARAM_INT);
-            $stmt->bindParam(":degreeTitle", $degreeTitle, ($degreeTitle != null) ? PDO::PARAM_STR : PDO::PARAM_NULL); // that's how you add sql null
+            $stmt->bindParam(":degreeTitle", $degreeTitle, ($degreeTitle != null) ? PDO::PARAM_STR : PDO::PARAM_NULL);
             $stmt->bindParam(":employmentStatus", $employmentStatus, PDO::PARAM_INT);
 
             // execute statement and retrieve success: boolean
             $success = $stmt->execute();
             if ($success) {
                 // everything went fine send to next page
-                $id = $conn->lastInsertId();
-//                echo var_dump($id);
-                header ('Location: questionaire.php');
+                
+                //Keeping existing session for the next page
+                $_SESSION["currUserID"] = $conn->lastInsertId();
+                
+                //Move to next page
+                header ('Location: testPassedId.php');
             } else {
+                // destroy the session
+                session_destroy(); 
+                
                 // something went wrong send to previous page
                  header ('Location: index.php');
             }
         } else {
+            // destroy the session
+            session_destroy(); 
+            
             // something went wrong send to previous page
             header ('Location: index.php');
         }
