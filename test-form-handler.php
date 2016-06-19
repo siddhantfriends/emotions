@@ -38,7 +38,7 @@ session_start();
                 $_SESSION["currUserID"] = $conn->lastInsertId();
                 
                 //Move to next page
-                header ('Location: testPassedId.php');
+                header ('Location: intro.php');
             } else {
                 // destroy the session
                 session_destroy(); 
