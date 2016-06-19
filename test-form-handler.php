@@ -2,42 +2,39 @@
 <body>
     <?php
         require_once "essentials/database_conn.php";
-    
-//          //For testing purpose only
-//        if(isset($_POST["gender-radio-group"])) echo $_POST["gender-radio-group"] . "<br />";
-//        if(isset($_POST["age-input"])) echo $_POST["age-input"] . "<br />";
-//        if(isset($_POST["nationality-dropdown"])) echo $_POST["nationality-dropdown"] . "<br />";
-//        if(isset($_POST["education-dropdown"])) echo $_POST["education-dropdown"] . "<br />";
-//        if(isset($_POST["degree-title"])) echo $_POST["degree-title"] . "<br />";
-//        if(isset($_POST["employment-status-dropdown"])) echo $_POST["employment-status-dropdown"] . "<br />";
 
-        $sqlQuery = "INSERT INTO [dbo].[User](Gender,
-        Age,
-        Nationality,
-        Education,
-        DegreeTitle,
-        EmploymentStatus) VALUES (
-        :userGender,
-        :userAge,
-        :userNation,
-        :userEdu,
-        :userDeg,
-        :userEmp)";
+        // Fetching variable's values if set else null
+        $gender = isset($_POST["gender-radio-group"]) ? $_POST["gender-radio-group"] : null;
+        $age = isset($_POST["age-input"]) ? $_POST["age-input"] : null;
+        $nationality = isset($_POST["nationality-dropdown"]) ? $_POST["nationality-dropdown"] : null;
+        $education = isset($_POST["education-dropdown"]) ? $_POST["education-dropdown"] : null;
+        $degreeTitle = isset($_POST["degree-title"]) ? $_POST["degree-title"] : null;
+        $employmentStatus = isset($_POST["employment-status-dropdown"]) ? $_POST["employment-status-dropdown"] : null;
 
-    if(isset($_POST["gender-radio-group"])&& (isset($_POST["age-input"])) && (isset($_POST["nationality-dropdown"])) && (isset($_POST["education-dropdown"])) && (isset($_POST["degree-title"])) ){
-        $result = $conn->prepare($sqlQuery);
+        // Continue if variables are validated else redirect to previous page
+        if ($gender != null && $age != null && $nationality != null && $education != null && $employmentStatus != null) {
+            // create prepared statement
+            $stmt = $conn->prepare("INSERT INTO [dbo].[User]([Gender], [Age], [Nationality], [Education], [DegreeTitle], [EmploymentStatus]) VALUES (:gender, :age, :nationality, :education, :degreeTitle, :employmentStatus)");
 
-        $result->bindParam(':userGender', $_POST['gender-radio-group'], PDO::PARAM_STR);
-        $result->bindParam(':userAge', $_POST['age-input'], PDO::PARAM_STR);
-        $result->bindParam(':userNation', $_POST['nationality-dropdown'], PDO::PARAM_STR);
-        $result->bindParam(':userEdu', $_POST['education-dropdown'], PDO::PARAM_STR);
-        if((isset($_POST["degree-title"])))
-        {$result->bindParam(':userDeg', $_POST['degree-title'], PDO::PARAM_STR);}
-        else{$result->bindParam(':userDeg', null, PDO::PARAM_STR);}
-        $result->bindParam(':userEmp', $_POST['employment-status-dropdown'], PDO::PARAM_STR);
-        $result->execute();
-//        $id = mysqli_insert_id($conn);
-        echo $conn->lastInsertId(); 
+            // bind variable values to the placeholders
+            $stmt->bindParam(":gender", $gender, PDO::PARAM_STR);
+            $stmt->bindParam(":age", $age, PDO::PARAM_INT);
+            $stmt->bindParam(":nationality", $nationality, PDO::PARAM_INT);
+            $stmt->bindParam(":education", $education, PDO::PARAM_INT);
+            $stmt->bindParam(":degreeTitle", $degreeTitle, ($degreeTitle != null) ? PDO::PARAM_STR : PDO::PARAM_NULL); // that's how you add sql null
+            $stmt->bindParam(":employmentStatus", $employmentStatus, PDO::PARAM_INT);
+
+            // execute statement and retrieve success: boolean
+            $success = $stmt->execute();
+            if ($success) {
+                // everything went fine send to next page
+                $id = $conn->lastInsertId();
+                echo var_dump($id);
+            } else {
+                // something went wrong send to previous page
+            }
+        } else {
+            // something went wrong send to previous page
         }
     ?>
 </body>
