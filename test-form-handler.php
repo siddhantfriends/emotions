@@ -29,12 +29,15 @@
             if ($success) {
                 // everything went fine send to next page
                 $id = $conn->lastInsertId();
-                echo var_dump($id);
+//                echo var_dump($id);
+                header ('Location: questionaire.php');
             } else {
                 // something went wrong send to previous page
+                 header ('Location: index.php');
             }
         } else {
             // something went wrong send to previous page
+            header ('Location: index.php');
         }
     ?>
 </body>
