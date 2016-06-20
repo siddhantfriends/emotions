@@ -32,20 +32,6 @@
         <link rel="import" href="bower_components/paper-progress/paper-progress.html"/>
         <link rel="import" href="bower_components/paper-styles/color.html"/>
         <link rel="import" href="bower_components/paper-slider/paper-slider.html" />
-
-        <?php
-            $sqlQuery = "SELECT [Question] FROM [dbo].[Questionaire] WHERE [Type]='IUIPC'";
-            $result = $conn->query($sqlQuery);
-            $questionGrabber = <<<QUESTIONGRABBER
-
-QUESTIONGRABBER;
-            foreach ($result as $row) {
-                $questionGrabber .= <<<QUESTIONGRABBER
-                <paper-item>$row[0]</paper-item>
-                <paper-slider id="ratings" pin snaps max="10" max-markers="10" step="1" value="1"></paper-slider>
-QUESTIONGRABBER;
-            }
-        ?>
         
         <!-- Importing css -->
         <link rel="stylesheet" type="text/css" href="style/main.css" />
@@ -57,38 +43,25 @@ QUESTIONGRABBER;
             <div id="center">
                 <paper-card id="user-details-1" heading="Questionnaire">
                     <div class="card-content">
-                        <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>
-                        <br />
-
-                        <?php echo $questionGrabber; ?>
-                        <style is="custom-style">
-                            .caption {
-                                padding-left: 12px;
-                                color: #a0a0a0;
-                            }
-                            #grade {
-                                --paper-slider-secondary-color: var(--paper-red-a200);
-                            }
-                        </style>
-                        <script>
-                            document.addEventListener('WebComponentsReady', function() {
-                                var ratings = document.querySelector('#ratings');
-                                ratings.addEventListener('value-change', function() {
-                                    document.querySelector('#ratingsLabel').textContent = ratings.value;
-                                });
-
-                                var grade = document.querySelector('#grade');
-                                grade.addEventListener('value-change', function() {
-                                    var label = (grade.value < grade.secondaryProgress) ? "Fail" : "Pass" ;
-                                    document.querySelector('#gradeLabel').textContent = grade.value + " (" + label + ")";
-                                });
-                            });
-                        </script>
+                        <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>  
+                        
+                        <template is="dom-bind">
+                            <iron-ajax auto url="iron-ajax-handler" params='{"type":"ques"}' handle-as="json" last-response="{{questionResponse}}"></iron-ajax>
+                            <template is="dom-repeat" items="{{questionResponse}}">
+                                <paper-item value="{{item.ID}}">{{item.Question}}</paper-item>
+                            </template>
+<!--                            <input type="hidden" value="{{sliderAnswer}}" name="sliderAnswer" />-->
+                        </template>
+                        
                     </div>
+
                     <div class="card-actions">
                         <paper-button>Next</paper-button>
                     </div>
                 </paper-card>
+
+
+                <br />
             </div>
         </div>
     </body>

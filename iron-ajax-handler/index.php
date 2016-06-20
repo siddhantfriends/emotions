@@ -14,6 +14,9 @@
             case "employment-status":
                 employmentStatus();
                 break;
+            case "ques":
+                question();
+                break;
         }
     }
 
