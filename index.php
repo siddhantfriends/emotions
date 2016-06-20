@@ -30,7 +30,7 @@ session_start();
     </head>
     <body>
         <div id="content">
-            <form is="iron-form" id="form" method="post" action="test-form-handler.php">
+            <form is="iron-form" id="form" method="post" action="introduction/">
             <?php include_once "include/title-bar.php"; ?>
             
             <div id="center">

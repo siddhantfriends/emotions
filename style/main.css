@@ -133,10 +133,14 @@ p#gender-error {
     font-family: 'Roboto', 'Noto', sans-serif;
 }
 
-paper-button#submit-button {
+paper-button#submit-button, paper-button#play-pause {
     width: 100%;
     padding: 20px;
     margin: 0px;
     font-size: 18px;
     font-weight: normal;
+}
+
+video {
+    width: 100%;
 }
