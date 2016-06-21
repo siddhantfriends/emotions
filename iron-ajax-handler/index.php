@@ -17,6 +17,11 @@
             case "ques":
                 question();
                 break;
+                
+//            case "questionaire":
+//                questionaire($_GET["type"])
+//                break;
+                
         }
     }
 

@@ -32,6 +32,7 @@
         <link rel="import" href="bower_components/paper-progress/paper-progress.html"/>
         <link rel="import" href="bower_components/paper-styles/color.html"/>
         <link rel="import" href="bower_components/paper-slider/paper-slider.html" />
+        <link rel="import" href="bower_components/iron-ajax/iron-ajax.html" />
         
         <!-- Importing css -->
         <link rel="stylesheet" type="text/css" href="style/main.css" />
@@ -44,23 +45,23 @@
                 <paper-card id="user-details-1" heading="Questionnaire">
                     <div class="card-content">
                         <iron-label id="info-label">The next pages will have some questions and will require you to create a Gmail account. If you already own a Gmail account please create a new one. Please take your time and fill out all of the required fields.<br /><br /><b>For each of the following, click the scale to indicate how well each adjective or phrase describes your present mood.</b></iron-label>  
-                        
+
                         <template is="dom-bind">
-                            <iron-ajax auto url="iron-ajax-handler" params='{"type":"ques"}' handle-as="json" last-response="{{questionResponse}}"></iron-ajax>
-                            <template is="dom-repeat" items="{{questionResponse}}">
+                            <iron-ajax auto url="iron-ajax-handler" params='{"type":"ques"}' handle-as="json" last-response="{{quesResponse}}"></iron-ajax>
+                            <template is="dom-repeat" items="{{quesResponse}}">
                                 <paper-item value="{{item.ID}}">{{item.Question}}</paper-item>
-                            </template>
-<!--                            <input type="hidden" value="{{sliderAnswer}}" name="sliderAnswer" />-->
+                                 <span style="position:relative; left:0px">Completely Agree</span>
+                                <paper-slider id="ratings" pin snaps max="100" max-markers="100" step="20" value="1" style="position:relative;right:10px; "></paper-slider>
+                                <span style="position:relative; right:0px;">Completely Disagree</span>
+                            <input type="hidden" id="item{{item.ID}}"value="{{ratings}}" name="sliderAnswer" />  
+                            </template>    
                         </template>
-                        
                     </div>
 
                     <div class="card-actions">
                         <paper-button>Next</paper-button>
                     </div>
                 </paper-card>
-
-
                 <br />
             </div>
         </div>
