@@ -50,9 +50,9 @@
                             <iron-ajax auto url="iron-ajax-handler" params='{"type":"ques"}' handle-as="json" last-response="{{quesResponse}}"></iron-ajax>
                             <template is="dom-repeat" items="{{quesResponse}}">
                                 <paper-item value="{{item.ID}}">{{item.Question}}</paper-item>
-                                 <span style="position:relative; left:0px">Completely Agree</span>
-                                <paper-slider id="ratings" pin snaps max="100" max-markers="100" step="20" value="1" style="position:relative;right:10px; "></paper-slider>
-                                <span style="position:relative; right:0px;">Completely Disagree</span>
+                                 <span>Completely Agree</span>
+                                <paper-slider id="ratings" pin snaps max="100" max-markers="100" step="20" value="1"></paper-slider>
+                                <span >Completely Disagree</span>
                             <input type="hidden" id="item{{item.ID}}"value="{{ratings}}" name="sliderAnswer" />  
                             </template>    
                         </template>
