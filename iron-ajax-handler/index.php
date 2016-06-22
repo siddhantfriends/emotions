@@ -17,6 +17,9 @@
             case "ques":
                 question();
                 break;
+            case "test-question":
+                testQuestion();
+                break;
                 
 //            case "questionaire":
 //                questionaire($_GET["type"])
