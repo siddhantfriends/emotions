@@ -8,7 +8,7 @@
         <button type="submit">Submit</button>
     </form>
     <form name="test-form2" method="get" action="form-handler.php">
-        <input type="text" name="variable-name2" />
+        <input type="text" name="variable-name2" value="xyz" />
         <button type="submit">Submit</button>
     </form>
 </body>
