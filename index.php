@@ -109,36 +109,37 @@ session_start();
                     </div>
                 </paper-card>
             </div>
-        </div>
-    </body>
-    <script>
-        function submitForm() {
-            var genderError = document.getElementById('gender').validate();
-            var valid = [document.getElementById('age-input').validate(),
-                        document.getElementById('nationality-dropdown').validate(),
-                        document.getElementById('education-dropdown').validate(),
-                        document.getElementById('employment-status-dropdown').validate(),
-                        genderError];
-            var validated = false;
+        </form>
+    </div>
+</body>
+<script>
+    function submitForm() {
+        var genderError = document.getElementById('gender').validate();
+        var valid = [document.getElementById('age-input').validate(),
+                    document.getElementById('nationality-dropdown').validate(),
+                    document.getElementById('education-dropdown').validate(),
+                    document.getElementById('employment-status-dropdown').validate(),
+                    genderError];
+        var validated = false;
 
-            if (!genderError) {
-                document.getElementById('gender-error').style.visibility = "visible";
+        if (!genderError) {
+            document.getElementById('gender-error').style.visibility = "visible";
+        } else {
+            document.getElementById('gender-error').style.visibility = "hidden";
+        }
+
+        for (var i = 0; i < valid.length; i++) {
+            if (!valid[i]) {
+                validated = false;
+                break;
             } else {
-                document.getElementById('gender-error').style.visibility = "hidden";
-            }
-
-            for (var i = 0; i < valid.length; i++) {
-                if (!valid[i]) {
-                    validated = false;
-                    break;
-                } else {
-                    validated = true;
-                }
-            }
-
-            if(validated) {
-                    document.getElementById('form').submit();
+                validated = true;
             }
         }
-    </script>
+
+        if(validated) {
+                document.getElementById('form').submit();
+        }
+    }
+</script>
 </html>
