@@ -14,6 +14,7 @@
         // bind variable values to the placeholders
         $stmt->bindParam(":userID", 1, PDO::PARAM_INT);
         $stmt->bindParam(":selectionID", $questionID, PDO::PARAM_INT);
+        $stmt->bindParam(":typeID", IUIPC, PDO::PARAM_INT);
         $stmt->bindParam(":answer", $ratingSlider, PDO::PARAM_STR);
         
         // execute statement and retrieve success: boolean
