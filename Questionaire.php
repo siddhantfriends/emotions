@@ -40,7 +40,8 @@
     <body>
         <div id="content" class="style-scope sample-content">
             <?php include_once "include/title-bar.php"; ?>
-            
+            <form is="iron-form" id="form" method="post" action="questionnaries/">
+                
             <div id="center">
                 <paper-card id="user-details-1" heading="Questionnaire">
                     <div class="card-content">
@@ -51,19 +52,24 @@
                             <template is="dom-repeat" items="{{quesResponse}}">
                                 <paper-item value="{{item.ID}}">{{item.Question}}</paper-item>
                                  <span>Completely Agree</span>
-                                <paper-slider id="ratings" pin snaps max="100" max-markers="100" step="20" value="1"></paper-slider>
+                                <paper-slider id="rating" pin snaps max="100" max-markers="100" step="20" value="1"></paper-slider>
                                 <span >Completely Disagree</span>
-                            <input type="hidden" id="item{{item.ID}}"value="{{ratings}}" name="sliderAnswer" />  
+                            <input type="hidden" value="{{ques}}" name="questionSectionID" />
+                            <input type="hidden" value="{{ratings}}" name="sliderAnswer" />  
                             </template>    
                         </template>
                     </div>
-
-                    <div class="card-actions">
-                        <paper-button>Next</paper-button>
+                    <div class="card-actions" style="padding: 0px;">
+                        <paper-button id="submit-button" onclick="submitForm()" class="green">Next</paper-button>
                     </div>
                 </paper-card>
                 <br />
             </div>
         </div>
     </body>
+    <script>
+        function submitForm() {
+                    document.getElementById('form').submit();
+        }
+    </script>
 </html>
