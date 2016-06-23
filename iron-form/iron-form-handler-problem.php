@@ -1,8 +1,13 @@
 <?php
-//    $dropdown = isset($_POST['my-dropdown']) ? $_POST['my-dropdown'] : null;
-echo var_dump($_POST);
-//    if ($dropdown != null) {
-//        echo $dropdown . '<br />';
-//
-//    }
+    
+    $questionId = isset($_POST['questionSectionID']) ? $_POST['questionSectionID'] : null;
+    $sliderValue = isset($_POST['selectedSliderValue']) ? $_POST['selectedSliderValue'] : null;
+    
+
+//echo var_dump($_POST);
+    if ($questionId != null && $sliderValue != null) {
+        echo "Selected Question ID is : " . $questionId . '<br />';
+        echo "Selected Slider value is : ". $sliderValue . '<br />';
+
+    }
 ?>

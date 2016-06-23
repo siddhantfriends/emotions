@@ -10,36 +10,31 @@
     <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html" />
     <link rel="import" href="../bower_components/paper-card/paper-card.html" />
     <link rel="import" href="../bower_components/paper-button/paper-button.html" />
-    <link rel="import" href="../bower_components/paper-input/paper-input.html" />
-    <link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
-    <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html" />
+
     <link rel="import" href="../bower_components/paper-item/paper-item.html" />
+    <link rel="import" href="../bower_components/paper-slider/paper-slider.html" />
+    
+ 
+
 </head>
 <body>
     <form is="iron-form" id="form" method="post" action="iron-form-handler-problem.php">
         <paper-card>
             <div class="title">Title goes here..</div>
             <div class="card-content">
-
                 <template is="dom-bind">
-
-                <paper-dropdown-menu id="paper-dropdown" label="Your favourite pastry" name="my-dropdown" selectedItem="{{si}}">
-                <paper-listbox class="dropdown-content">
-                    <paper-item>Croissant</paper-item>
-                    <paper-item>Donut</paper-item>
-                    <paper-item>Financier</paper-item>
-                    <paper-item>Madeleine</paper-item>
-                </paper-listbox>
-                </paper-dropdown-menu>
-
-
-                <paper-input type="text" name="polymer-element" ></paper-input>
-                <input type="text" name="selectedValue" value="{{si}}"/>
-
-                </template>
-
-
+                <iron-ajax auto url="../iron-ajax-handler" params='{"type":"test-question"}' handle-as="json" last-response="{{question}}"></iron-ajax>
+                <template is="dom-repeat" items="{{question}}">
+                    <paper-item value="{{item.ID}}">{{item.Question}}</paper-item>
+                    <paper-slider id="rating" pin snaps max="100" max-markers="100" step="20" value={{sliderSelectedValue}}></paper-slider>
+                    
+<!--                To grab selected value of slider and retrieved question ID-->
+                    <input type="hidden" name="questionSectionID" value="{{item.ID}}" />
+                    <input type="hidden" name="selectedSliderValue" value="{{sliderSelectedValue}}" />
+                </template>    
+            </template>
             </div>
+            
             <div class="card-actions">
                 <paper-button onclick="form_submit()">Submit</paper-button>
             </div>
