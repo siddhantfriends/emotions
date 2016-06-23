@@ -47,7 +47,7 @@
             require_once "../essentials/database_conn.php";
 
             // using prepared statement
-            $stmt = $conn->prepare("SELECT TOP 1 [ID], [Question] FROM [dbo].[Questionaire]");
+            $stmt = $conn->prepare("SELECT TOP 5 [ID], [Question] FROM [dbo].[Questionaire]");
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             echo json_encode($result);

@@ -18,23 +18,23 @@
 
 </head>
 <body>
-    <form is="iron-form" id="form" method="post" action="iron-form-handler-problem.php">
+    <form is="iron-form" name="questionForm" id="form" method="post" action="iron-form-handler-problem.php">
         <paper-card>
             <div class="title">Title goes here..</div>
+            
             <div class="card-content">
                 <template is="dom-bind">
                 <iron-ajax auto url="../iron-ajax-handler" params='{"type":"test-question"}' handle-as="json" last-response="{{question}}"></iron-ajax>
+                    
                 <template is="dom-repeat" items="{{question}}">
                     <paper-item value="{{item.ID}}">{{item.Question}}</paper-item>
-                    <paper-slider id="rating" pin snaps max="100" max-markers="100" step="20" value={{sliderSelectedValue}}></paper-slider>
+                    <paper-slider id="slider{{item.ID}}" pin snaps max="100" max-markers="100" step="20"></paper-slider>
                     
-<!--                To grab selected value of slider and retrieved question ID-->
-                    <input type="hidden" name="questionSectionID" value="{{item.ID}}" />
-                    <input type="hidden" name="selectedSliderValue" value="{{sliderSelectedValue}}" />
+                    <input type="hidden" name="questionSectionID{{item.ID}}" value="{{item.ID}}" />
                 </template>    
             </template>
             </div>
-            
+
             <div class="card-actions">
                 <paper-button onclick="form_submit()">Submit</paper-button>
             </div>
@@ -43,7 +43,26 @@
 </body>
 
 <script>
+    var thisForm = document.forms['questionForm'];
+    var currentSlider;
+
+//   Dynamically adding new hidden input elements in html
+    function addElementInForm(thisForm,key,value){
+        var createInputElement= document.createElement('input');
+        createInputElement.type="hidden";
+        createInputElement.name=key;
+        createInputElement.value=value;
+        thisForm.appendChild(createInputElement);
+    }
+        
+    
     function form_submit() {
+        for(i=1; i<=5;i++){
+            currentSlider='slider'+i;
+            currentSliderValue=document.getElementById(currentSlider).value;
+            addElementInForm(thisForm, currentSlider, currentSliderValue);    
+        }
+        
        document.getElementById('form').submit();
     }
 </script>
